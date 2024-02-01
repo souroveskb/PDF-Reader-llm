@@ -37,3 +37,7 @@ returns {"response": "response_from_the_LLM"}
 ![endpoints](images/api-endpoints.png)
 
 To test this I have used streamlit. From streamlit I have created requests to get the session IDs, session pdf files and created a new session.
+
+![testing](images/testing.png)
+
+Here I have tested on previously uploaded files, and sessions. Made a drop down menu to make the user select the sessions and pdf names which they want to talk to. and based on the users choices I have fetched the request.
