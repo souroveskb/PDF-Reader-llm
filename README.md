@@ -24,11 +24,16 @@ gets the list of all the previous sessions
 * create_session -> get()
 creates a new session and returns the session ID for the current session
 
-* get_pdfs -> get("/{session_id}/list")
+* get_pdfs -> get("/list/{session_id}/")
 returns the list of pdf files in that particular session
 
-* create_up_file -> post({session_id}/upload)
+* upload_pdf_file -> post(/upload/{session_id}/)
 from this endpoint a pdf file can be uploaded and it saves the pdf file inside that session
 
+* query_on_pdf -> get(/get_response/{session_id}/{pdf_name}/{query})
+Extracts the previous conversation from history.txt, gets the contexually similar chunks of texts from the pdf. Then queries the LLM with the query got from the endpoint. It also outputs the time taken for query solving in the terminal.
+returns {"response": "response_from_the_LLM"}
+
+![endpoints](images/api-endpoints.png)
 
 To test this I have used streamlit. From streamlit I have created requests to get the session IDs, session pdf files and created a new session.
